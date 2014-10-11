@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/list_item_textview_genre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textSize="14sp" />
+
+    <CheckedTextView
+        android:id="@+id/list_item_textview_memo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/list_item_textview_genre"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/list_item_textview_createtime_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/list_item_textview_memo"
+        android:text="@string/label_createtime"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/list_item_textview_createtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/list_item_textview_memo"
+        android:layout_toRightOf="@+id/list_item_textview_createtime_label"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/list_item_textview_updatetime_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/list_item_textview_memo"
+        android:layout_toRightOf="@+id/list_item_textview_createtime"
+        android:layout_marginLeft="10dp"
+        android:text="@string/label_updatetime"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/list_item_textview_updatetime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/list_item_textview_memo"
+        android:layout_toRightOf="@+id/list_item_textview_updatetime_label"
+        android:textSize="12sp" />
+
+</RelativeLayout>

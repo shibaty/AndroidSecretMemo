@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <ListPreference
+        android:key="@string/settings_key_singletap_is"
+        android:title="@string/settings_title_singletap"
+        android:dialogTitle="@string/settings_title_singletap"
+        android:entries="@array/singletap_title"
+        android:entryValues="@array/singletap_value"
+        android:defaultValue="@string/settings_list_value_singletap_is_nop" />
+</PreferenceScreen>

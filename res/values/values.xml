@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Key of SingleTap Preference -->
+    <string name="settings_key_singletap_is" translatable="false">settings.motion.singletap</string>
+
+    <!-- Values of SingleTap Preference -->
+    <string name="settings_list_value_singletap_is_nop" translatable="false">0</string>
+    <string name="settings_list_value_singletap_is_copy" translatable="false">1</string>
+    <string name="settings_list_value_singletap_is_notification" translatable="false">2</string>
+</resources>

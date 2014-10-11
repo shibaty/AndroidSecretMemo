@@ -1,0 +1,45 @@
+<resources>
+
+    <!--  Application Name -->
+    <string name="app_name">SecretMemo</string>
+
+    <!-- Menu -->
+    <string name="menu_add">追加</string>
+    <string name="menu_delete_as">選択して削除</string>
+    <string name="menu_cancel">キャンセル</string>
+    <string name="menu_settings">設定</string>
+    <string name="menu_copy">コピー</string>
+    <string name="menu_notification">通知バーに表示</string>
+    <string name="menu_edit">編集</string>
+    <string name="menu_delete">削除</string>
+
+    <!-- List -->
+    <string name="list_empty_message">リストに何か追加しましょう&#8230;</string>
+
+    <!-- Button -->
+    <string name="button_cancel">キャンセル</string>
+    <string name="button_ok">OK</string>
+
+    <!-- Label -->
+    <string name="label_genre">ジャンル:</string>
+    <string name="label_memo">メモ: </string>
+    <string name="label_createtime">作成日: </string>
+    <string name="label_updatetime">更新日: </string>
+
+    <!-- Toast -->
+    <string name="toast_copy_to_clipboard">クリップボードにコピーしました。</string>
+
+    <!-- Settings -->
+    <string name="settings_header_security">セキュリティ設定</string>
+    <string name="settings_header_motion">動作設定</string>
+    <string name="settings_title_singletap">シングルタップで&#8230;</string>
+    <string name="settings_title_is_password">パスワード保護</string>
+    <string name="settings_summary_is_password_true">パスワード設定済み</string>
+    <string name="settings_summary_is_password_false">パスワード設定無し</string>
+    <string name="settings_list_tilte_singletap_is_nop">何もしない</string>
+    <string name="settings_list_tilte_singletap_is_copy">コピー</string>
+    <string name="settings_list_tilte_singletap_is_notification">通知バーに表示</string>
+
+    <!-- Notificaiton -->
+    <string name="notification_ticker_view_memo">通知バーに表示したアイテムはスワイプで消えます。</string>
+</resources>

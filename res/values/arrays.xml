@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="singletap_title">
+        <item>@string/settings_list_tilte_singletap_is_nop</item>
+        <item>@string/settings_list_tilte_singletap_is_copy</item>
+        <item>@string/settings_list_tilte_singletap_is_notification</item>
+        </string-array>
+
+    <string-array name="singletap_value">
+        <item>@string/settings_list_value_singletap_is_nop</item>
+        <item>@string/settings_list_value_singletap_is_copy</item>
+        <item>@string/settings_list_value_singletap_is_notification</item>
+    </string-array>
+</resources>
