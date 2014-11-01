@@ -1,5 +1,5 @@
 /**
- * メモアイテムアダプター.
+ * メモアイテムアダプター.<br>
  * @author shibaty
  */
 
@@ -20,7 +20,7 @@ import android.widget.TextView;
 import com.shibaty.secretmemo.db.MemoEntity;
 
 /**
- * メモアイテムのアダプタークラス.
+ * メモアイテムのアダプタークラス.<br>
  *
  * @author shibaty
  */
@@ -32,8 +32,8 @@ public class MemoListAdapter extends ArrayAdapter<MemoEntity> {
     private boolean isSelectMode;
 
     /**
-     * コンストラクタ.
-     * @param context コンテキスト
+     * コンストラクタ.<br>
+     * @param context Context
      */
     public MemoListAdapter(Context context) {
         super(context, R.layout.listitem_memo);
@@ -45,6 +45,10 @@ public class MemoListAdapter extends ArrayAdapter<MemoEntity> {
      *
      * @see android.widget.Adapter#getView(int, android.view.View,
      *      android.view.ViewGroup)
+     * @param position 指定位置
+     * @param convertView Viewのインスタンス
+     * @param parent 親のViewGroup
+     * @return View
      */
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -88,19 +92,19 @@ public class MemoListAdapter extends ArrayAdapter<MemoEntity> {
     }
 
     /**
-     * Viewの構造を保持するクラス.
+     * Viewの構造を保持するクラス.<br>
      *
      * @author shibaty
      */
     private static class ViewHolder {
         /** ジャンル. */
-        TextView genre;
+        public TextView genre;
         /** メモ内容. */
-        CheckedTextView memo;
+        public CheckedTextView memo;
         /** 作成日. */
-        TextView createtime;
+        public TextView createtime;
         /** 更新日. */
-        TextView updatetime;
+        public TextView updatetime;
     }
 
     /**
@@ -129,10 +133,10 @@ public class MemoListAdapter extends ArrayAdapter<MemoEntity> {
      * @return *に変換された文字列
      */
     private String setDotString(String str) {
-        String result_str = "";
+        String resultStr = "";
         for (int i = 0; i < str.length(); i++) {
-            result_str += "*";
+            resultStr += "*";
         }
-        return result_str;
+        return resultStr;
     }
 }

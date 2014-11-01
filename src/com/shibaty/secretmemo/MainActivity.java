@@ -1,5 +1,6 @@
 /**
- * メインActivity.
+ * メインActivity.<br>
+ *
  * @author shibaty
  */
 
@@ -25,32 +26,33 @@ import com.shibaty.secretmemo.preference.Preference;
 import com.shibaty.secretmemo.util.LogUtil;
 
 /**
- * メインActivityクラス.
+ * メインActivityクラス.<br>
  *
  * @author shibaty
  */
 public class MainActivity extends Activity {
 
-    /** Shimeji - Mushroom Intent Action. */
+    /** Shimeji - Mushroom Intent Action.<br> */
     private static final String MUSHROOM_ACTION =
             "com.adamrocker.android.simeji.ACTION_INTERCEPT";
 
-    /** Shimeji - Mushroom Output Extra Key. */
+    /** Shimeji - Mushroom Output Extra Key.<br> */
     private static final String MUSHROOM_OUTPUT_EXTRA_KEY = "replace_key";
 
-    /** ClipData用ラベル. */
+    /** ClipData用ラベル.<br> */
     private static final String CLIPDATA_LABEL = "memo_text";
 
-    /** DAO. */
+    /** DAO.<br> */
     private MemoDao dao;
 
-    /** マッシュルームフラグ. */
+    /** マッシュルームフラグ.<br> */
     private boolean isMushroom;
 
     /**
-     * Activity生成時の処理.
+     * Activity生成時の処理.<br>
      *
      * @see android.content.Context#onCreate(Bundle)
+     * @param savedInstanceState savedInstanceState
      */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -82,7 +84,7 @@ public class MainActivity extends Activity {
     }
 
     /**
-     * Activity再開時の処理.
+     * Activity再開時の処理.<br>
      *
      * @see android.app.Activity#onResume()
      */
@@ -96,7 +98,7 @@ public class MainActivity extends Activity {
     }
 
     /**
-     * Activity中断時の処理.
+     * Activity中断時の処理.<br>
      *
      * @see android.app.Activity#onPause()
      */
@@ -110,9 +112,11 @@ public class MainActivity extends Activity {
     }
 
     /**
-     * OptionsMenu生成.
+     * OptionsMenu生成.<br>
      *
      * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
+     * @param menu Menu
+     * @return 処理結果
      */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -121,9 +125,11 @@ public class MainActivity extends Activity {
     }
 
     /**
-     * OptionsMenuのアイテム選択時の処理.
+     * OptionsMenuのアイテム選択時の処理.<br>
      *
      * @see android.app.Activity#onOptionsItemSelected(android.view.MenuItem)
+     * @param item MenuItem
+     * @return 処理結果
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -144,7 +150,7 @@ public class MainActivity extends Activity {
     }
 
     /**
-     * アイテム編集Fragmentに遷移.
+     * アイテム編集Fragmentに遷移.<br>
      *
      * @param entity 編集対象のメモ
      */
@@ -168,7 +174,7 @@ public class MainActivity extends Activity {
     }
 
     /**
-     * DAOからメモリストを取得.
+     * DAOからメモリストを取得.<br>
      *
      * @return メモリスト
      */
@@ -177,7 +183,7 @@ public class MainActivity extends Activity {
     }
 
     /**
-     * メモをDAOに追加.
+     * メモをDAOに追加.<br>
      *
      * @param entity メモ
      */
@@ -186,7 +192,7 @@ public class MainActivity extends Activity {
     }
 
     /**
-     * DAOのメモを更新.
+     * DAOのメモを更新.<br>
      *
      * @param entity メモ
      */
@@ -195,7 +201,7 @@ public class MainActivity extends Activity {
     }
 
     /**
-     * DAOからメモを削除.
+     * DAOからメモを削除.<br>
      *
      * @param entity メモ
      */
@@ -204,7 +210,8 @@ public class MainActivity extends Activity {
     }
 
     /**
-     * メモがタップされたときの処理を行う. マッシュルームの場合はマッシュルーム動作、それ以外はPreferenceに従う.
+     * メモがタップされたときの処理を行う.<br>
+     * マッシュルームの場合はマッシュルーム動作、それ以外はPreferenceに従う.
      *
      * @param entity メモ
      */
@@ -225,7 +232,7 @@ public class MainActivity extends Activity {
     }
 
     /**
-     * メモをクリップボードにコピー.
+     * メモをクリップボードにコピー.<br>
      *
      * @param entity メモ
      */
@@ -240,7 +247,7 @@ public class MainActivity extends Activity {
     }
 
     /**
-     * メモを通知バーに表示.
+     * メモを通知バーに表示.<br>
      *
      * @param entity メモ
      */

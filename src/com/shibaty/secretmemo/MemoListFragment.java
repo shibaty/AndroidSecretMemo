@@ -1,7 +1,7 @@
 /**
- * メモリストFragment.
- * @author shibaty
+ * メモリストFragment.<br>
  */
+
 package com.shibaty.secretmemo;
 
 import java.util.List;
@@ -24,17 +24,25 @@ import com.shibaty.secretmemo.db.MemoEntity;
 import com.shibaty.secretmemo.util.LogUtil;
 
 /**
- * メモリストFragmentクラス.
+ * メモリストFragmentクラス.<br>
+ *
  * @author shibaty
  */
 public class MemoListFragment extends ListFragment {
 
     /**
-     * FragmentのView作成処理.
-     * @see android.app.Fragment#onCreateView(android.view.LayoutInflater, android.view.ViewGroup, android.os.Bundle)
+     * FragmentのView作成処理.<br>
+     *
+     * @see android.app.Fragment#onCreateView(android.view.LayoutInflater,
+     *      android.view.ViewGroup, android.os.Bundle)
+     * @param inflater LayoutInflater
+     * @param container Container
+     * @param savedInstanceState savedInstanceState
+     * @return View
      */
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState) {
         if (LogUtil.isDebugable()) {
             LogUtil.methodStart();
         }
@@ -50,8 +58,12 @@ public class MemoListFragment extends ListFragment {
     }
 
     /**
-     * FragmentのView作成後処理.
-     * @see android.app.ListFragment#onViewCreated(android.view.View, android.os.Bundle)
+     * FragmentのView作成後処理.<br>
+     *
+     * @see android.app.ListFragment#onViewCreated(android.view.View,
+     *      android.os.Bundle)
+     * @param view View
+     * @param savedInstanceState savedInstanceState
      */
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
@@ -80,7 +92,8 @@ public class MemoListFragment extends ListFragment {
     }
 
     /**
-     * Fragment再開時の処理.
+     * Fragment再開時の処理.<br>
+     *
      * @see android.app.Fragment#onResume()
      */
     @Override
@@ -92,10 +105,10 @@ public class MemoListFragment extends ListFragment {
         super.onResume();
 
         // リストをクリアしてデータを表示
-        List<MemoEntity> list = ((MainActivity)getActivity()).getAllItem();
-        ((MemoListAdapter)getListAdapter()).clear();
+        List<MemoEntity> list = ((MainActivity) getActivity()).getAllItem();
+        ((MemoListAdapter) getListAdapter()).clear();
         for (MemoEntity entity : list) {
-            ((MemoListAdapter)getListAdapter()).add(entity);
+            ((MemoListAdapter) getListAdapter()).add(entity);
         }
 
         if (LogUtil.isDebugable()) {
@@ -104,8 +117,14 @@ public class MemoListFragment extends ListFragment {
     }
 
     /**
-     * リストアイテムをクリックしたときの処理.
-     * @see android.app.ListFragment#onListItemClick(android.widget.ListView, android.view.View, int, long)
+     * リストアイテムをクリックしたときの処理.<br>
+     *
+     * @see android.app.ListFragment#onListItemClick(android.widget.ListView,
+     *      android.view.View, int, long)
+     * @param l {@inheritDoc}
+     * @param v {@inheritDoc}
+     * @param position {@inheritDoc}
+     * @param id {@inheritDoc}
      */
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
@@ -113,9 +132,9 @@ public class MemoListFragment extends ListFragment {
             LogUtil.methodStart();
         }
 
-        if (!((MemoListAdapter)getListAdapter()).isSelectMode()) {
-            MemoEntity entity = (MemoEntity)l.getItemAtPosition(position);
-            ((MainActivity)getActivity()).tapItem(entity);
+        if (!((MemoListAdapter) getListAdapter()).isSelectMode()) {
+            MemoEntity entity = (MemoEntity) l.getItemAtPosition(position);
+            ((MainActivity) getActivity()).tapItem(entity);
         }
 
         if (LogUtil.isDebugable()) {
@@ -124,8 +143,12 @@ public class MemoListFragment extends ListFragment {
     }
 
     /**
-     * OptionsMenu作成.
-     * @see android.app.Fragment#onCreateOptionsMenu(android.view.Menu, android.view.MenuInflater)
+     * OptionsMenu作成.<br>
+     *
+     * @see android.app.Fragment#onCreateOptionsMenu(android.view.Menu,
+     *      android.view.MenuInflater)
+     * @param menu {@inheritDoc}
+     * @param inflater {@inheritDoc}
      */
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -133,7 +156,7 @@ public class MemoListFragment extends ListFragment {
             LogUtil.methodStart();
         }
 
-        if (((MemoListAdapter)getListAdapter()).isSelectMode()) {
+        if (((MemoListAdapter) getListAdapter()).isSelectMode()) {
             inflater.inflate(R.menu.list_selectmode, menu);
         } else {
             inflater.inflate(R.menu.list, menu);
@@ -146,7 +169,8 @@ public class MemoListFragment extends ListFragment {
     }
 
     /**
-     * OptionsMenuのアイテム選択時の処理.
+     * OptionsMenuのアイテム選択時の処理.<br>
+     *
      * @see android.app.Fragment#onOptionsItemSelected(android.view.MenuItem)
      * @param item {@inheritDoc}
      * @return {@inheritDoc}
@@ -159,30 +183,30 @@ public class MemoListFragment extends ListFragment {
         boolean result = true;
 
         switch (item.getItemId()) {
-        case R.id.menu_add:
-            ((MainActivity)getActivity()).moveToItemEditFragment(new MemoEntity());
-            break;
-        case R.id.menu_delete_as:
-            getListView().setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
-            ((MemoListAdapter)getListAdapter()).setSelectMode(true);
-            getFragmentManager().invalidateOptionsMenu();
-            break;
-        case R.id.menu_delete:
-            SparseBooleanArray list = getListView().getCheckedItemPositions();
-            for (int i = list.size() - 1; i >= 0; i--) {
-                MemoEntity entity = (MemoEntity)getListView().getItemAtPosition(list.keyAt(i));
-                ((MainActivity)getActivity()).deleteItem(entity);
-                ((MemoListAdapter)getListAdapter()).remove(entity);
-            }
-            // FALLTHROUGH
-        case R.id.menu_cancel:
-            getListView().setChoiceMode(ListView.CHOICE_MODE_NONE);
-            ((MemoListAdapter)getListAdapter()).setSelectMode(false);
-            getFragmentManager().invalidateOptionsMenu();
-            break;
-        default:
-            result = super.onOptionsItemSelected(item);
-            break;
+            case R.id.menu_add:
+                ((MainActivity) getActivity()).moveToItemEditFragment(new MemoEntity());
+                break;
+            case R.id.menu_delete_as:
+                getListView().setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+                ((MemoListAdapter) getListAdapter()).setSelectMode(true);
+                getFragmentManager().invalidateOptionsMenu();
+                break;
+            case R.id.menu_delete:
+                SparseBooleanArray list = getListView().getCheckedItemPositions();
+                for (int i = list.size() - 1; i >= 0; i--) {
+                    MemoEntity entity = (MemoEntity) getListView().getItemAtPosition(list.keyAt(i));
+                    ((MainActivity) getActivity()).deleteItem(entity);
+                    ((MemoListAdapter) getListAdapter()).remove(entity);
+                }
+                // FALLTHROUGH
+            case R.id.menu_cancel:
+                getListView().setChoiceMode(ListView.CHOICE_MODE_NONE);
+                ((MemoListAdapter) getListAdapter()).setSelectMode(false);
+                getFragmentManager().invalidateOptionsMenu();
+                break;
+            default:
+                result = super.onOptionsItemSelected(item);
+                break;
         }
         if (LogUtil.isDebugable()) {
             LogUtil.methodEnd();
@@ -191,8 +215,13 @@ public class MemoListFragment extends ListFragment {
     }
 
     /**
-     * ContextMenu生成.
-     * @see android.app.Fragment#onCreateContextMenu(android.view.ContextMenu, android.view.View, android.view.ContextMenu.ContextMenuInfo)
+     * ContextMenu生成.<br>
+     *
+     * @see android.app.Fragment#onCreateContextMenu(android.view.ContextMenu,
+     *      android.view.View, android.view.ContextMenu.ContextMenuInfo)
+     * @param menu ContextMenu
+     * @param v View
+     * @param menuInfo CotextMenuInfo
      */
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
@@ -203,39 +232,41 @@ public class MemoListFragment extends ListFragment {
     }
 
     /**
-     * ContextMenuのアイテム選択時の処理.
+     * ContextMenuのアイテム選択時の処理.<br>
+     *
      * @see android.app.Fragment#onContextItemSelected(android.view.MenuItem)
-     * @return 処理結果
+     * @param item {@inheritDoc}
+     * @return {@inheritDoc}
      */
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         boolean result = false;
 
-        AdapterContextMenuInfo acmi = (AdapterContextMenuInfo)item.getMenuInfo();
+        AdapterContextMenuInfo acmi = (AdapterContextMenuInfo) item.getMenuInfo();
 
-        MemoEntity entity = (MemoEntity)getListView().getItemAtPosition(acmi.position);
+        MemoEntity entity = (MemoEntity) getListView().getItemAtPosition(acmi.position);
 
         switch (item.getItemId()) {
-        case R.id.menu_copy:
-            ((MainActivity)getActivity()).copyItem(entity);
-            result = true;
-            break;
-        case R.id.menu_notification:
-            ((MainActivity)getActivity()).notificationItem(entity);
-            result = true;
-            break;
-        case R.id.menu_edit:
-            ((MainActivity)getActivity()).moveToItemEditFragment(entity);
-            result = true;
-            break;
-        case R.id.menu_delete:
-            ((MainActivity)getActivity()).deleteItem(entity);
-            ((MemoListAdapter)getListAdapter()).remove(entity);
-            result = true;
-            break;
-        default:
-            result = super.onContextItemSelected(item);
-            break;
+            case R.id.menu_copy:
+                ((MainActivity) getActivity()).copyItem(entity);
+                result = true;
+                break;
+            case R.id.menu_notification:
+                ((MainActivity) getActivity()).notificationItem(entity);
+                result = true;
+                break;
+            case R.id.menu_edit:
+                ((MainActivity) getActivity()).moveToItemEditFragment(entity);
+                result = true;
+                break;
+            case R.id.menu_delete:
+                ((MainActivity) getActivity()).deleteItem(entity);
+                ((MemoListAdapter) getListAdapter()).remove(entity);
+                result = true;
+                break;
+            default:
+                result = super.onContextItemSelected(item);
+                break;
         }
         return result;
     }

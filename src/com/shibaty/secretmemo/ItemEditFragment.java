@@ -24,6 +24,7 @@ import com.shibaty.secretmemo.db.MemoEntity;
  */
 public class ItemEditFragment extends Fragment {
 
+    /** Entity キー. */
     public static final String ARGKEY_ENTITY = "ARGKEY_ENTITY";
 
     /** メモ. */
@@ -39,9 +40,14 @@ public class ItemEditFragment extends Fragment {
      *
      * @see android.app.Fragment#onCreateView(android.view.LayoutInflater,
      *      android.view.ViewGroup, android.os.Bundle)
+     * @param inflater {@inheritDoc}
+     * @param container {@inheritDoc}
+     * @param savedInstanceState {@inheritDoc}
+     * @return {@inheritDoc}
      */
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState) {
         // レイアウト設定
         View view = inflater.inflate(R.layout.fragment_itemedit, container, false);
         view.setBackgroundResource(android.R.color.background_dark);

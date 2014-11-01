@@ -16,64 +16,69 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.shibaty.secretmemo.util.LogUtil;
 
+/**
+ * Memoアイテム DAOクラス.<br>
+ *
+ * @author shibaty
+ */
 public class MemoDao extends SQLiteOpenHelper {
     // TODO コメント
     /**
-     * DB名.
+     * DB名.<br>
      */
     private static final String DBNAME = "secretmemo.db";
 
     /**
-     * DB Version.
+     * DB Version.<br>
      */
     private static final int DBVERSION = 1;
 
     /**
-     * DDL File Name.
+     * DDL File Name.<br>
      */
     private static final String CREATE_SQL_FILENAME = "sql/create/memo.sql";
 
     /**
-     * Table Name.
+     * Table Name.<br>
      */
     private static final String TABLE_NAME = "memo";
 
     /**
-     * Key - ID.
+     * Key - ID.<br>
      */
     private static final String KEY_ID = "id";
     /**
-     * Key - Genre.
+     * Key - Genre.<br>
      */
     private static final String KEY_GENRE = "genre";
     /**
-     * Key - Memo.
+     * Key - Memo.<br>
      */
     private static final String KEY_MEMO = "memo";
     /**
-     * Key - Create Time.
+     * Key - Create Time.<br>
      */
     private static final String KEY_CREATETIME = "createtime";
 
     /**
-     * Key - Update Time.
+     * Key - Update Time.<br>
      */
     private static final String KEY_UPDATETIME = "updatetime";
 
     /**
-     * SQLite Databese.
+     * SQLite Databese.<br>
      */
     private SQLiteDatabase mDb;
 
     /**
-     * Asset Manager.
+     * Asset Manager.<br>
      */
     private AssetManager assetmanager;
 
     /**
-     * コンストラクタ.
+     * コンストラクタ.<br>
      *
-     * @param context
+     * @param context Context
      */
     public MemoDao(Context context) {
         super(context, DBNAME, null, DBVERSION);
@@ -81,9 +86,10 @@ public class MemoDao extends SQLiteOpenHelper {
     }
 
     /**
-     * Dao生成時の処理.
+     * Dao生成時の処理.<br>
      *
-     * @see android.database.sqlite.SQLiteOpenHelper#onCreate(android.database.sqlite.SQLiteDatabase)
+     * @see android.database.sqlite.SQLiteOpenHelper#onCreate(
+     *      android.database.sqlite.SQLiteDatabase)
      * @param db {@inheritDoc}
      */
     @Override
@@ -118,10 +124,10 @@ public class MemoDao extends SQLiteOpenHelper {
     }
 
     /**
-     * DBバージョン更新時の処理.
+     * DBバージョン更新時の処理.<br>
      *
-     * @see android.database.sqlite.SQLiteOpenHelper#onUpgrade(android.database.sqlite.SQLiteDatabase,
-     *      int, int)
+     * @see android.database.sqlite.SQLiteOpenHelper#onUpgrade(
+     *      android.database.sqlite.SQLiteDatabase, int, int)
      * @param db {@inheritDoc}
      * @param oldVersion {@inheritDoc}
      * @param newVersion {@inheritDoc}
@@ -132,21 +138,21 @@ public class MemoDao extends SQLiteOpenHelper {
     }
 
     /**
-     * DBの初期化.
+     * DBの初期化.<br>
      */
     public void init() {
         mDb = getWritableDatabase();
     }
 
     /**
-     * DBのクローズ.
+     * DBのクローズ.<br>
      */
     public void finish() {
         mDb.close();
     }
 
     /**
-     * すべて取得.
+     * すべて取得.<br>
      *
      * @return メモのリスト
      */
@@ -181,7 +187,7 @@ public class MemoDao extends SQLiteOpenHelper {
     }
 
     /**
-     * メモの追加.
+     * メモの追加.<br>
      *
      * @param entity メモ
      * @return 処理結果
@@ -203,7 +209,7 @@ public class MemoDao extends SQLiteOpenHelper {
     }
 
     /**
-     * メモの更新.
+     * メモの更新.<br>
      *
      * @param entity メモ
      * @return 処理結果
@@ -224,7 +230,7 @@ public class MemoDao extends SQLiteOpenHelper {
     }
 
     /**
-     * メモの削除.
+     * メモの削除.<br>
      *
      * @param entity メモ
      * @return 処理結果
