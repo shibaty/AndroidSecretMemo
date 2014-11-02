@@ -2,7 +2,7 @@
  * 動作設定Fragment.<br>
  */
 
-package com.shibaty.secretmemo;
+package org.shibaty.secretmemo;
 
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;

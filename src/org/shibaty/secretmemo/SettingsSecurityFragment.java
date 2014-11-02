@@ -1,7 +1,7 @@
 /**
  * セキュリティ設定Fragment.<br>
  */
-package com.shibaty.secretmemo;
+package org.shibaty.secretmemo;
 
 import android.os.Bundle;
 import android.preference.PreferenceFragment;

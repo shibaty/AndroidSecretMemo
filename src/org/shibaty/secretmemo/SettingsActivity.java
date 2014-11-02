@@ -1,4 +1,4 @@
-package com.shibaty.secretmemo;
+package org.shibaty.secretmemo;
 
 import java.util.List;
 

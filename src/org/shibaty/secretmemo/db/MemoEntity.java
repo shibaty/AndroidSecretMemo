@@ -1,7 +1,7 @@
 /**
  * @author shibaty
  */
-package com.shibaty.secretmemo.db;
+package org.shibaty.secretmemo.db;
 
 import java.io.Serializable;
 import java.util.Date;

@@ -2,7 +2,9 @@
  * アイテム編集フラグメント.
  */
 
-package com.shibaty.secretmemo;
+package org.shibaty.secretmemo;
+
+import org.shibaty.secretmemo.db.MemoEntity;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -14,8 +16,6 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.TextView;
-
-import com.shibaty.secretmemo.db.MemoEntity;
 
 /**
  * アイテム編集フラグメントクラス.

@@ -4,9 +4,14 @@
  * @author shibaty
  */
 
-package com.shibaty.secretmemo;
+package org.shibaty.secretmemo;
 
 import java.util.List;
+
+import org.shibaty.secretmemo.db.MemoDao;
+import org.shibaty.secretmemo.db.MemoEntity;
+import org.shibaty.secretmemo.preference.Preference;
+import org.shibaty.secretmemo.util.LogUtil;
 
 import android.app.Activity;
 import android.app.FragmentTransaction;
@@ -19,11 +24,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
-
-import com.shibaty.secretmemo.db.MemoDao;
-import com.shibaty.secretmemo.db.MemoEntity;
-import com.shibaty.secretmemo.preference.Preference;
-import com.shibaty.secretmemo.util.LogUtil;
 
 /**
  * メインActivityクラス.<br>

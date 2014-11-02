@@ -2,12 +2,12 @@
  * プリファレンス操作.
  */
 
-package com.shibaty.secretmemo.preference;
+package org.shibaty.secretmemo.preference;
+
+import org.shibaty.secretmemo.R;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-
-import com.shibaty.secretmemo.R;
 
 /**
  * プリファレンス操作クラス.<br>

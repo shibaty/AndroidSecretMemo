@@ -2,7 +2,7 @@
  * ログユーティリティ.
  */
 
-package com.shibaty.secretmemo.util;
+package org.shibaty.secretmemo.util;
 
 import android.util.Log;
 

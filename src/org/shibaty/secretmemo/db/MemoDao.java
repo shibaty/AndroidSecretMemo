@@ -1,5 +1,5 @@
 
-package com.shibaty.secretmemo.db;
+package org.shibaty.secretmemo.db;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -7,14 +7,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.shibaty.secretmemo.util.LogUtil;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
-import com.shibaty.secretmemo.util.LogUtil;
 
 /**
  * Memoアイテム DAOクラス.<br>

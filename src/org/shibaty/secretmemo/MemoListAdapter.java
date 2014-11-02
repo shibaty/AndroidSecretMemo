@@ -3,10 +3,12 @@
  * @author shibaty
  */
 
-package com.shibaty.secretmemo;
+package org.shibaty.secretmemo;
 
 import java.text.SimpleDateFormat;
 import java.util.Locale;
+
+import org.shibaty.secretmemo.db.MemoEntity;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -16,8 +18,6 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckedTextView;
 import android.widget.ListView;
 import android.widget.TextView;
-
-import com.shibaty.secretmemo.db.MemoEntity;
 
 /**
  * メモアイテムのアダプタークラス.<br>
